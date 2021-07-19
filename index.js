@@ -29,10 +29,16 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   
   1. What is the difference between counter1 and counter2?
   
+    - counter1 stores count inside of the function and counter2 stores count in the global scope.
+
   2. Which of the two uses a closure? How can you tell?
   
+    - counter1 has the closure and you can tell because the inner functions calls on count from the parent or outer function.
+
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
+
+    - In general it seems like counter2 would only be useful if you needed to keep a running counter in the global scope. The use of a closure with counter1 seems like a better general use case by keeping the counter inside of the function and the increment inside the inner function.
 */
 
 // counter1 code
@@ -51,7 +57,6 @@ let count = 0;
 function counter2() {
   return count++;
 }
-
 
 /* ⚾️⚾️⚾️ Task 2: inning() ⚾️⚾️⚾️
 Use the inning function below to do the following:
